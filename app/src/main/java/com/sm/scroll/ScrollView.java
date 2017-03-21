@@ -76,11 +76,16 @@ public class ScrollView extends View {
 //                layoutParams.topMargin = getTop()+offsetY;
 //                setLayoutParams(layoutParams);　　　         ３、改变布局参数，两个边界
 
-//                ((View)getParent()).scrollTo(-offsetX,-offsetY);
+                ((View)getParent()).scrollTo(-offsetX,-offsetY);
                 break;
         }
 
         return true;
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     public void smoothScroller(int destX, int destY){
