@@ -36,7 +36,8 @@ public class ScrollView extends View {
 
     private void init(Context context) {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(Color.GRAY);
+        mPaint.setColor(Color.RED);
+        mPaint.setTextSize(30);
         mPaint.setStrokeWidth(3f);
 
         mScroller = new Scroller(context);
@@ -46,9 +47,10 @@ public class ScrollView extends View {
     protected void onDraw(Canvas canvas) {
         int width = getWidth() / 2;
         int height = getHeight() / 2;
-
-        Rect mr = new Rect(width - mRectWidth, height - mRectWidth,width + mRectWidth, height+mRectWidth);
-        canvas.drawRect(mr,mPaint);
+        String cp = "∙∙";
+        canvas.drawText(cp,width,height,mPaint);
+//        Rect mr = new Rect(width - mRectWidth, height - mRectWidth,width + mRectWidth, height+mRectWidth);
+//        canvas.drawRect(mr,mPaint);
     }
 
     @Override
